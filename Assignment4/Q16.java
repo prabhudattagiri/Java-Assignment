@@ -8,9 +8,9 @@ class CalculatorS extends JFrame implements ActionListener
 {
     Container cn;
     JLabel n1,n2,r;
-    JTextField t1,t2;
-    JButton sm,sb,ml,di,md,pw;
-    CalculatorS()
+    JTextField t1,t2,tr;
+    JButton sum,sub,mul,div,mod,pow;
+    public CalculatorS()
     {
         cn=getContentPane();
         setTitle("Calculator");
@@ -36,101 +36,79 @@ class CalculatorS extends JFrame implements ActionListener
         r=new JLabel("Result");
         r.setBounds(100,200,300,30);
         cn.add(r);
+        tr=new JTextField();
+        tr.setBounds(300,200,100,30);
+        cn.add(tr);
 
         //For Button
-        sm=new JButton("Sum");
-        sm.setBounds(100,250,70,30);
-        sm.addActionListener(this);
-        cn.add(sm);
+        sum=new JButton("Sum");
+        sum.setBounds(100,250,70,30);
+        sum.addActionListener(this);
+        cn.add(sum);
 
-        sb=new JButton("Sub");
-        sb.setBounds(180,250,70,30);
-        sb.addActionListener(this);
-        cn.add(sb);
+        sub=new JButton("Sub");
+        sub.setBounds(180,250,70,30);
+        sub.addActionListener(this);
+        cn.add(sub);
 
-        ml=new JButton("Mul");
-        ml.setBounds(260,250,70,30);
-        ml.addActionListener(this);
-        cn.add(ml);
+        mul=new JButton("Mul");
+        mul.setBounds(260,250,70,30);
+        mul.addActionListener(this);
+        cn.add(mul);
 
-        di=new JButton("Div");
-        di.setBounds(340,250,70,30);
-        di.addActionListener(this);
-        cn.add(di);
+        div=new JButton("Div");
+        div.setBounds(340,250,70,30);
+        div.addActionListener(this);
+        cn.add(div);
 
-        md=new JButton("Mod");
-        md.setBounds(420,250,70,30);
-        md.addActionListener(this);
-        cn.add(md);
+        mod=new JButton("Mod");
+        mod.setBounds(420,250,70,30);
+        mod.addActionListener(this);
+        cn.add(mod);
 
-        pw=new JButton("Pow");
-        pw.setBounds(500,250,70,30);
-        pw.addActionListener(this);
-        cn.add(pw);
+        pow=new JButton("Pow");
+        pow.setBounds(500,250,70,30);
+        pow.addActionListener(this);
+        cn.add(pow);
 
         setSize(800,500);
         setVisible(true);
     }
+
     public void actionPerformed(ActionEvent ae)
     {
-        //For summation
-        if(ae.getSource()==sm);
+        if (ae.getSource()==sum) 
         {
-            String s1=t1.getText();
-            String s2=t2.getText();
-            int a=Integer.parseInt(s1);
-            int b=Integer.parseInt(s2);
-            r.setText("Result : Sum = "+(a+b));
+            int res=Integer.parseInt(t1.getText())+Integer.parseInt(t2.getText());
+            tr.setText(res+" ");
+           
         }
-        //For subtraction
-        if(ae.getSource()==sb);
+        if (ae.getSource()==sub) 
         {
-            String s1=t1.getText();
-            String s2=t2.getText();
-            int a=Integer.parseInt(s1);
-            int b=Integer.parseInt(s2);
-            r.setText("Result : Sub = "+(a-b));
+            int res=Integer.parseInt(t1.getText())-Integer.parseInt(t2.getText());
+            tr.setText(res+" ");
+           
         }
-        //For multiplication
-        if(ae.getSource()==ml);
+        if (ae.getSource()==mul) 
         {
-            String s1=t1.getText();
-            String s2=t2.getText();
-            int a=Integer.parseInt(s1);
-            int b=Integer.parseInt(s2);
-            r.setText("Result : Mul = "+(a*b));
+            long res=Integer.parseInt(t1.getText())*Integer.parseInt(t2.getText());
+            tr.setText(res+" ");
         }
-        //For division
-        if(ae.getSource()==di);
+        if (ae.getSource()==div) 
         {
-            String s1=t1.getText();
-            String s2=t2.getText();
-            int a=Integer.parseInt(s1);
-            int b=Integer.parseInt(s2);
-            r.setText("Result : Div = "+(a/b));
+            double res=Integer.parseInt(t1.getText())/Integer.parseInt(t2.getText());
+            tr.setText(res+" ");
         }
-        //For Modulus
-        if(ae.getSource()==md);
+        if (ae.getSource()==mod) 
         {
-            String s1=t1.getText();
-            String s2=t2.getText();
-            int a=Integer.parseInt(s1);
-            int b=Integer.parseInt(s2);
-            r.setText("Result : Mod = "+(a%b));
+            int res=Integer.parseInt(t1.getText())%Integer.parseInt(t2.getText());
+            tr.setText(res+" ");
         }
-        //For Power
-        if(ae.getSource()==md);
+        if (ae.getSource()==pow) 
         {
-            String s1=t1.getText();
-            String s2=t2.getText();
-            int a=Integer.parseInt(s1);
-            int b=Integer.parseInt(s2);
-            int p=1;
-            for(int i=1;i<=b;i++)
-            {
-                p=p*a;
-            }
-            r.setText("Result : Pow = "+p);
+            t2.setText(2+"");
+            double res=Math.pow(Integer.parseInt(t1.getText()),Integer.parseInt(t2.getText()));
+            tr.setText(res+" ");
         }
     }
 
