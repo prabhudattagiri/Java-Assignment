@@ -10,6 +10,7 @@ class CalculatorS extends JFrame implements ActionListener
     JLabel n1,n2,r;
     JTextField t1,t2,tr;
     JButton sum,sub,mul,div,mod,pow;
+
     public CalculatorS()
     {
         cn=getContentPane();
@@ -75,41 +76,63 @@ class CalculatorS extends JFrame implements ActionListener
         setVisible(true);
     }
 
-    public void actionPerformed(ActionEvent ae)
+   
+    public void actionPerformed(ActionEvent e) 
     {
-        if (ae.getSource()==sum) 
+        if (e.getSource()==sum) 
         {
-            int res=Integer.parseInt(t1.getText())+Integer.parseInt(t2.getText());
-            tr.setText(res+" ");
-           
+            String s1=t1.getText();
+            String s2=t2.getText();
+            int a=Integer.parseInt(s1);
+            int b=Integer.parseInt(s2);
+            tr.setText((a+b)+"");
         }
-        if (ae.getSource()==sub) 
+        if (e.getSource()==sub) 
         {
-            int res=Integer.parseInt(t1.getText())-Integer.parseInt(t2.getText());
-            tr.setText(res+" ");
-           
+            String s1=t1.getText();
+            String s2=t2.getText();
+            int a=Integer.parseInt(s1);
+            int b=Integer.parseInt(s2);
+            tr.setText((a-b)+"");
         }
-        if (ae.getSource()==mul) 
+        if (e.getSource()==mul) 
         {
-            long res=Integer.parseInt(t1.getText())*Integer.parseInt(t2.getText());
-            tr.setText(res+" ");
+            String s1=t1.getText();
+            String s2=t2.getText();
+            int a=Integer.parseInt(s1);
+            int b=Integer.parseInt(s2);
+            tr.setText((a*b)+"");
         }
-        if (ae.getSource()==div) 
+        if (e.getSource()==div) {
+            String s1=t1.getText();
+            String s2=t2.getText();
+            int a=Integer.parseInt(s1);
+            int b=Integer.parseInt(s2);
+            tr.setText((a/b)+"");
+        }
+        if (e.getSource()==pow) 
         {
-            double res=Integer.parseInt(t1.getText())/Integer.parseInt(t2.getText());
-            tr.setText(res+" ");
+            String s1=t1.getText();
+            String s2=t2.getText();
+            int a=Integer.parseInt(s1);
+            int b=Integer.parseInt(s2);
+            long p=1;
+            for(int i=1;i<=b;i++)
+            {
+                p=p*a;
+            }
+            tr.setText(p+"");
         }
-        if (ae.getSource()==mod) 
+        if (e.getSource()==mod) 
         {
-            int res=Integer.parseInt(t1.getText())%Integer.parseInt(t2.getText());
-            tr.setText(res+" ");
+            String s1=t1.getText();
+            String s2=t2.getText();
+            int a=Integer.parseInt(s1);
+            int b=Integer.parseInt(s2);
+            tr.setText((a%b)+"");
         }
-        if (ae.getSource()==pow) 
-        {
-            t2.setText(2+"");
-            double res=Math.pow(Integer.parseInt(t1.getText()),Integer.parseInt(t2.getText()));
-            tr.setText(res+" ");
-        }
+        
+
     }
 
 }
