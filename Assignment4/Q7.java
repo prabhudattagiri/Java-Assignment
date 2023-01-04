@@ -5,7 +5,7 @@ class Calulation
     int a,b;
     Calulation()
     {
-        //default constructor
+        //non parameterized constructor 
     }
     Calulation(int x,int y)
     {

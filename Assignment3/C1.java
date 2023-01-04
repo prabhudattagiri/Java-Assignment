@@ -66,6 +66,7 @@ class Calulator
             if(i%a==0 && i%b==0)
             {
                 m=i;
+                break;
             }
         }
         System.out.println("LCM of "+a+" "+b+" is "+m);
