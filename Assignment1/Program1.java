@@ -10,5 +10,5 @@ class Program1
      System.out.println("Dept Name : CSEA");
      System.out.println("Branch : MCA");
      System.out.println("College Name : IGIT");
-     }
+    }
 }

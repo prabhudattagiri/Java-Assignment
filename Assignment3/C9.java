@@ -33,8 +33,8 @@ class Stack
     }
     void push (int a)
     {
-        boolean st= isfull();
-        if(st)
+        //boolean st= isfull();
+        if(isfull())
             System.out.println("Overflow");
         else
         {
@@ -45,8 +45,8 @@ class Stack
     }
     void pop ()
     {
-        boolean st =isempty();
-        if(st)
+        //boolean st =isempty();
+        if(isempty())
            System.out.println("Underflow");
         else
         {
@@ -57,8 +57,8 @@ class Stack
     }
     void display()
     {
-        boolean st = isempty();
-        if(st)
+        //boolean st = isempty();
+        if(isempty())
         {
             System.out.println("Stack is empty , Nothing to display");
         }

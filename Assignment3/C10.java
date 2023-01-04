@@ -55,14 +55,13 @@ class Queue
     }
     void delete()
     {
-        int element;
         if(isEmpty())
         {
             System.out.println("Queue is empty");
         }
         else
         {
-            element=item[front];
+            int t=item[front];
             if(front>=rear)
             {
                 front =-1;
@@ -72,7 +71,7 @@ class Queue
             {
                 front++;
             }
-            System.out.println(element+" is Remove from the Queue");
+            System.out.println(t+" is Remove from the Queue");
         }
     }
     void display()
@@ -95,7 +94,7 @@ class Queue
     void peak(int n)
     {
         boolean available = false;        
-        for(int i=0;i<size;i++)
+        for(int i=front;i<=rear;i++)
         {
             if(item[i]==n)
             {

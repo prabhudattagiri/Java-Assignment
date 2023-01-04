@@ -35,6 +35,7 @@ class Calulation
             if(i%a==0 && i%b==0)
             {
                 lcm=i;
+                break;
             }
         }
         System.out.println("LCM of "+a+" and "+b+" is "+lcm);
