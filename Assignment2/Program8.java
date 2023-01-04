@@ -65,7 +65,7 @@ public class Program8
             System.out.println("Your mark for subject " + i + "is" + args[i] + "and grade is " + gd);
             sgpat = sgpat + gp * cp;
         }
-        double percent = (tms / fms) / 100;
+        double percent = (tms / fms) * 100;
         double sgpa = sgpat / 12;
         System.out.println("Total Mark is " + tms);
         System.out.println("% of mark is " + percent);
