@@ -3,10 +3,6 @@ import java.util.Scanner;
 class Calulation
 {
     int a,b;
-    Calulation()
-    {
-        //non parameterized constructor 
-    }
     Calulation(int x,int y)
     {
         a=x;
